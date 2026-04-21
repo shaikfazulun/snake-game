@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  :root {
+    --bg-dark: #050505;
+    --neon-cyan: #00f3ff;
+    --neon-pink: #ff007f;
+    --neon-green: #39ff14;
+    --card-bg: #111111;
+  }
+
+  body {
+    @apply bg-[var(--bg-dark)] text-white font-sans antialiased overflow-hidden;
+  }
+}
+
+@theme {
+  --animate-spin-slow: spin 3s linear infinite;
+}
+
+@layer components {
+  .neon-border {
+    @apply border border-[var(--neon-cyan)] shadow-[0_0_10px_rgba(0,243,255,0.2)];
+  }
+  
+  .neon-text-pink {
+    @apply text-[var(--neon-pink)] drop-shadow-[0_0_8px_var(--neon-pink)];
+  }
+
+  .neon-text-cyan {
+    @apply text-[var(--neon-cyan)] drop-shadow-[0_0_8px_var(--neon-cyan)];
+  }
+
+  .glass-panel {
+    @apply bg-white/3 backdrop-blur-[10px] border border-white/10;
+  }
+
+  .snake-cell {
+    @apply w-full h-full border border-[#1a1a1a];
+  }
+
+  .snake-body {
+    @apply bg-[var(--neon-green)] shadow-[0_0_8px_var(--neon-green)];
+  }
+
+  .snake-head {
+    @apply bg-white shadow-[0_0_12px_#ffffff];
+  }
+
+  .snake-food {
+    @apply bg-[var(--neon-pink)] rounded-full shadow-[0_0_10px_var(--neon-pink)];
+  }
+}
+
+.pixel-grid {
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
